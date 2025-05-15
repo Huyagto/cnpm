@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +11,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/home.css">
+
 </head>
+
 <body>
     <!-- Header Section -->
     <header class="site-header">
@@ -18,7 +21,7 @@
             <div class="container">
                 <div class="logo">
                     <a href="index.html">
-                        <img src="img/zoo_logo.png" alt="The Zoo Shop Logo">
+                        <img src="img/logo.png" alt="The Zoo Shop Logo">
                         <!-- THAY THẾ: img/zoo_logo.png bằng logo của bạn -->
                     </a>
                 </div>
@@ -43,13 +46,19 @@
         </div>
 
         <nav class="main-navigation">
-            <div class="category-menu-toggle">
-                <i class="fas fa-bars"></i>
-                <span>DANH MỤC SẢN PHẨM</span>
-                <i class="fas fa-angle-down"></i>
-            </div>
+             <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+            <nav id="mobile-menu">
+    <ul>
+      <li><a href="index.html" class="link-page">Trang chủ</a></li>
+      <li><a href="danhmuc.html" class="link-page">Sản phẩm</a></li>
+      <li> <a href="#" class="go-to-lienhe" class="link-page">Về Chillhood</a></li>
+      <li> <a href="#" class="go-to-gioithieu" class="link-page">Liên Hệ</a></li>
+      <li> <a href="#" class="go-to-lab" class="link-page">Lab Thực Hành</a></li>
+    </ul>
+  </nav>
             <div class="main-nav-links">
-                <div class="container"> <!-- Container cho các link menu chính -->
+                <div class="container">
+                    <!-- Container cho các link menu chính -->
                     <ul>
                         <li class="active"><a href="#"><i class="fas fa-home"></i> Trang chủ</a></li>
                         <li><a href="/sanpham.html"><i class="fas fa-box-open"></i> Sản phẩm</a></li>
@@ -69,19 +78,51 @@
         <section class="hero-section">
             <div class="container">
                 <div class="hero-main-banner">
-                    <img src="img/hero-banner-placeholder.jpg" alt="Màn hình chính hãng">
-                    <!-- THAY THẾ: img/hero-banner-placeholder.jpg bằng banner chính của bạn -->
-                    <div class="hero-banner-overlay">
-                        <!-- Có thể thêm text hoặc nút ở đây nếu thiết kế có -->
+                    <div class="slider-container">
+                        <!-- Nút mũi tên -->
+                        <button class="arrow arrow-left" onclick="prevSlide()">❮</button>
+                        <button class="arrow arrow-right" onclick="nextSlide()">❯</button>
+
+                        <div class="slider-wrapper" id="slider">
+                            <!-- Slide 1 -->
+                            <div class="slide">
+                                <a href="danhmuc.html" target="_blank">
+                                    <img src="img/banner1.png" alt="Màn hình chính hãng">
+                                </a>
+                            </div>
+                            <!-- Slide 2 -->
+                            <div class="slide">
+                                <a href="danhmuc.html" target="_blank">
+                                    <img src="img/banner2.png" alt="Khuyến mãi lớn">
+                                </a>
+                            </div>
+                            <!-- Slide 3 -->
+                            <div class="slide">
+                                <a href="danhmuc.html" target="_blank">
+                                    <img src="img/banner2.png" alt="Giảm giá hot">
+                                </a>
+                            </div>
+                            <div class="slide">
+                                <a href="danhmuc.html" target="_blank">
+                                    <img src="img/banner4.png" alt="Giảm giá ">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="dots">
+                            <div class="dot active" onclick="showSlide(0)"></div>
+                            <div class="dot" onclick="showSlide(1)"></div>
+                            <div class="dot" onclick="showSlide(2)"></div>
+                            <div class="dot" onclick="showSlide(3)"></div>
+                        </div>
                     </div>
                 </div>
                 <div class="hero-side-banners">
                     <div class="side-banner">
-                        <img src="img/side-banner1-placeholder.jpg" alt="Side Banner 1">
+                        <img src="img/bg1.png" alt="Side Banner 1">
                         <!-- THAY THẾ: img/side-banner1-placeholder.jpg -->
                     </div>
                     <div class="side-banner">
-                        <img src="img/side-banner2-placeholder.jpg" alt="Side Banner 2">
+                        <img src="img/bg2.png" alt="Side Banner 2">
                         <!-- THAY THẾ: img/side-banner2-placeholder.jpg -->
                     </div>
                 </div>
@@ -93,15 +134,15 @@
         <section class="promo-small-banners">
             <div class="container">
                 <a href="#" class="promo-banner-item">
-                    <img src="img/promo-small1-placeholder.jpg" alt="Build PC Giá Rẻ">
+                    <img src="img/bg5.png" alt="Build PC Giá Rẻ">
                     <!-- THAY THẾ -->
                 </a>
                 <a href="#" class="promo-banner-item">
-                    <img src="img/promo-small2-placeholder.jpg" alt="Laptop Gaming Giảm Sốc">
+                    <img src="img/bg4.png" alt="Laptop Gaming Giảm Sốc">
                     <!-- THAY THẾ -->
                 </a>
                 <a href="#" class="promo-banner-item">
-                    <img src="img/promo-small3-placeholder.jpg" alt="Phụ Kiện Gaming">
+                    <img src="img/bg3.png" alt="Phụ Kiện Gaming">
                     <!-- THAY THẾ -->
                 </a>
             </div>
@@ -123,7 +164,7 @@
                     <div class="product-item" data-category-item="pc accessories">
                         <a href="#">
                             <div class="product-image">
-                                <img src="img/product1-placeholder.jpg" alt="Tai nghe Gaming">
+                                <img src="img/sp1.png" alt="Tai nghe Gaming">
                                 <!-- THAY THẾ -->
                             </div>
                             <div class="product-info">
@@ -136,7 +177,7 @@
                     <div class="product-item" data-category-item="accessories">
                         <a href="#">
                             <div class="product-image">
-                                <img src="img/product2-placeholder.jpg" alt="Tai nghe nhét tai">
+                                <img src="img/sp2.png" alt="Tai nghe nhét tai">
                                 <!-- THAY THẾ -->
                             </div>
                             <div class="product-info">
@@ -149,7 +190,7 @@
                     <div class="product-item" data-category-item="accessories">
                         <a href="#">
                             <div class="product-image">
-                                <img src="img/product3-placeholder.jpg" alt="Chuột Gaming">
+                                <img src="img/sp3.png" alt="Chuột Gaming">
                                 <!-- THAY THẾ -->
                             </div>
                             <div class="product-info">
@@ -162,7 +203,7 @@
                     <div class="product-item" data-category-item="pc">
                         <a href="#">
                             <div class="product-image">
-                                <img src="img/product4-placeholder.jpg" alt="Tai nghe cao cấp">
+                                <img src="img/sp4.png" alt="Tai nghe cao cấp">
                                 <!-- THAY THẾ -->
                             </div>
                             <div class="product-info">
@@ -181,15 +222,15 @@
         <section class="mid-banners-section">
             <div class="container">
                 <a href="#" class="mid-banner-item">
-                    <img src="img/mid-banner1-placeholder.jpg" alt="Mid Banner 1">
+                    <img src="img/midbanner.png" alt="Mid Banner 1">
                     <!-- THAY THẾ -->
                 </a>
                 <a href="#" class="mid-banner-item">
-                    <img src="img/mid-banner2-placeholder.jpg" alt="Mid Banner 2">
+                    <img src="img/midbanner2.png" alt="Mid Banner 2">
                     <!-- THAY THẾ -->
                 </a>
-                 <a href="#" class="mid-banner-item full-width-banner">
-                    <img src="img/mid-banner-full-placeholder.jpg" alt="Mid Banner Full Width">
+                <a href="#" class="mid-banner-item full-width-banner">
+                    <img src="img/midfullbanner.png" alt="Mid Banner Full Width">
                     <!-- THAY THẾ -->
                 </a>
             </div>
@@ -203,12 +244,12 @@
                 <div class="best-sellers-column">
                     <h2 class="section-title-alt">DANH MỤC BÁN CHẠY</h2>
                     <a href="#" class="best-seller-banner">
-                        <img src="img/bestseller-banner-placeholder.jpg" alt="Thanh lý loa Razer">
+                        <img src="img/tin1.png" alt="Thanh lý loa Razer">
                         <!-- THAY THẾ -->
                     </a>
                     <a href="#" class="best-seller-banner small-banner">
-                         <img src="img/bestseller-small-placeholder.jpg" alt="Siêu thanh lý Razer">
-                         <!-- THAY THẾ -->
+                        <img src="img/tin4.png" alt="Siêu thanh lý Razer">
+                        <!-- THAY THẾ -->
                     </a>
                 </div>
                 <div class="news-column">
@@ -217,7 +258,7 @@
                         <div class="news-article-item">
                             <a href="#">
                                 <div class="news-article-image">
-                                    <img src="img/news-thumb1-placeholder.jpg" alt="Tin tức 1">
+                                    <img src="img/tin2.png" alt="Tin tức 1">
                                     <!-- THAY THẾ -->
                                 </div>
                                 <div class="news-article-content">
@@ -229,7 +270,7 @@
                         <div class="news-article-item">
                             <a href="#">
                                 <div class="news-article-image">
-                                    <img src="img/news-thumb2-placeholder.jpg" alt="Tin tức 2">
+                                    <img src="img/tin3.png" alt="Tin tức 2">
                                     <!-- THAY THẾ -->
                                 </div>
                                 <div class="news-article-content">
@@ -238,10 +279,10 @@
                                 </div>
                             </a>
                         </div>
-                         <div class="news-article-item">
+                        <div class="news-article-item">
                             <a href="#">
                                 <div class="news-article-image">
-                                    <img src="img/news-thumb3-placeholder.jpg" alt="Tin tức 3">
+                                    <img src="img/tin4.png" alt="Tin tức 3">
                                     <!-- THAY THẾ -->
                                 </div>
                                 <div class="news-article-content">
@@ -262,11 +303,11 @@
         <section class="bottom-banners-section">
             <div class="container">
                 <a href="#" class="bottom-banner-item">
-                    <img src="img/bottom-banner1-placeholder.jpg" alt="Bottom Banner 1">
+                    <img src="img/bottombanner1.png" alt="Bottom Banner 1">
                     <!-- THAY THẾ -->
                 </a>
                 <a href="#" class="bottom-banner-item">
-                    <img src="img/bottom-banner2-placeholder.jpg" alt="Bottom Banner 2">
+                    <img src="img/bottombanner2.png" alt="Bottom Banner 2">
                     <!-- THAY THẾ -->
                 </a>
             </div>
@@ -295,7 +336,7 @@
         <div class="footer-main">
             <div class="container">
                 <div class="footer-column">
-                    <img src="img/zoo_logo.png" alt="The Zoo Shop Logo" class="footer-logo">
+                    <img src="img/logo.png" alt="The Zoo Shop Logo" class="footer-logo">
                     <!-- THAY THẾ -->
                     <p>The Zoo Shop chuyên cung cấp linh kiện máy tính - laptop giá rẻ</p>
                 </div>
@@ -307,7 +348,10 @@
                 </div>
                 <div class="footer-column footer-map">
                     <!-- Nhúng bản đồ Google Maps vào đây nếu cần -->
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.521037160999!2d106.6880308147499!3d10.77139299232499!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f20f2a7e9b9%3A0x29a8d6b7dc5a1ba0!2zQ2jhu6MgQuG6v24gVGjDoG5o!5e0!3m2!1svi!2s!4v1678888888888!5m2!1svi!2s" width="100%" height="180" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.521037160999!2d106.6880308147499!3d10.77139299232499!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f20f2a7e9b9%3A0x29a8d6b7dc5a1ba0!2zQ2jhu6MgQuG6v24gVGjDoG5o!5e0!3m2!1svi!2s!4v1678888888888!5m2!1svi!2s"
+                        width="100%" height="180" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>
@@ -324,7 +368,7 @@
                     </div>
                 </div>
                 <a href="#" class="bct-logo">
-                    <img src="img/bct_logo.png" alt="Đã Thông Báo Bộ Công Thương">
+                    <img src="img/bocongthuong.png" alt="Đã Thông Báo Bộ Công Thương">
                     <!-- THAY THẾ -->
                 </a>
             </div>
@@ -334,4 +378,5 @@
 
     <script src="js/script.js"></script>
 </body>
+
 </html>

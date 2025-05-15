@@ -754,7 +754,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             }
         }
+  const toggle = document.getElementById("menu-toggle");
+  const menu = document.getElementById("mobile-menu");
 
+  if (toggle && menu) {
+    toggle.addEventListener("click", function () {
+      menu.classList.toggle("active");
+    });
+  }
         function getStatusText(statusKey) {
             const statuses = {
                 "pending": "Chờ xử lý", "processing": "Đang xử lý", "shipped": "Đang vận chuyển",
@@ -777,6 +784,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         renderOrders(userOrders);
     }
+
 
 });
 
@@ -812,3 +820,36 @@ styleSheet.textContent = `
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 `;
 document.head.appendChild(styleSheet);
+const slider = document.getElementById("slider");
+  const slides = slider.querySelectorAll(".slide");
+  let currentSlide = 0;
+
+  function showSlide(index) {
+    slider.style.transform = `translateX(-${index * 100}%)`;
+    updateDots(index);
+  }
+
+  function updateDots(index) {
+    const dots = document.querySelectorAll('.dot');
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === index);
+    });
+  }
+
+  window.nextSlide = function () {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  }
+
+  window.prevSlide = function () {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+  }
+
+  // Tự động chuyển slide mỗi 2000ms
+  setInterval(() => {
+    nextSlide();
+  }, 2000);
+
+  // Khởi tạo ban đầu
+  showSlide(currentSlide);
