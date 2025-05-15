@@ -56,9 +56,10 @@ img {
 }
 
 .logo img {
-    height: 50px; /* Điều chỉnh kích thước logo */
+  width: 100px;
+  height: auto;
+  object-fit: contain;
 }
-
 .search-container {
     flex-grow: 1; /* Cho phép ô tìm kiếm co giãn */
     display: flex; /* Để input và button nằm trên cùng một hàng */
@@ -142,7 +143,44 @@ img {
     border-top: 1px solid #e9e9e9;
     border-bottom: 1px solid #e9e9e9;
 }
+#mobile-menu {
+    display: none;
+    position: sticky;
+    top: 5%;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+  }
+  #mobile-menu.active {
+    display: block;
+  }
 
+  #mobile-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  #mobile-menu ul li {
+    padding: 12px 16px;
+    border-bottom: 1px solid #ccc;
+  }
+
+  #mobile-menu ul li a {
+    text-decoration: none;
+    font-size: 20px;
+    color: #333;
+    display: block;
+  }
+
+  #mobile-menu ul li a:hover {
+    background-color: #f2f2f2;
+    color: #E5C07B;
+  }
 .category-menu-toggle {
     background-color: #333A45; /* MÀU: Nền đen/xám đậm từ Figma */
     color: #fff;
@@ -165,6 +203,86 @@ img {
 .main-nav-links {
     flex-grow: 1; /* Phần link chiếm phần còn lại */
     background-color: #28B4B6; /* MÀU: Xanh ngọc từ Figma */
+}
+.slider-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  overflow: hidden;
+  margin-bottom: 10px;
+  z-index: 1;
+}
+
+.slider-wrapper {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  position: relative;
+}
+
+.slide img {
+  width: 100%;
+  display: block;
+}
+
+.dots {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dot.active {
+  background-color: #28a745;
+}
+
+.slide a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Mũi tên */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  border: none;
+  padding: 12px;
+  cursor: pointer;
+  z-index: 2;
+  font-size: 20px;
+  border-radius: 50%;
+  transition: background 0.3s;
+}
+
+.arrow:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.arrow-left {
+  left: 15px;
+}
+
+.arrow-right {
+  right: 15px;
 }
 
 .main-nav-links ul {
@@ -281,7 +399,8 @@ img {
 }
 
 .footer-column .footer-logo { /* Style riêng cho logo ở footer */
-    height: 50px; /* Điều chỉnh */
+    width: 50%;
+    height: auto; /* Điều chỉnh */
     margin-bottom: 15px;
 }
 
