@@ -404,7 +404,7 @@ img {
 }
 
 .footer-column .footer-logo { /* Style riêng cho logo ở footer */
-    width: 50%;
+    width:30%;
     height: auto; /* Điều chỉnh */
     margin-bottom: 15px;
 }

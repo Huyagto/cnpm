@@ -1,0 +1,262 @@
+/* ===== RESPONSIVE STYLES ===== */
+/* Styles chỉ áp dụng cho thiết bị di động (dưới 768px) */
+@media (max-width: 767.98px) {
+    /* === HEADER & NAVIGATION === */
+    /* Hiển thị nút menu toggle */
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        font-size: 24px;
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+        background-color: var(--primary-color);
+        border-radius: 4px;
+        margin: 10px auto;
+    }
+    
+    /* Ẩn menu chính khi ở chế độ mobile */
+    .main-nav-links nav {
+        display: none;
+    }
+    
+    /* Hiển thị menu khi được kích hoạt */
+    .main-nav-links nav.active {
+        display: block;
+        animation: slideDown 0.3s ease;
+    }
+    
+    /* Chuyển menu từ ngang sang dọc */
+    .main-nav-links nav ul {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+    
+    .main-nav-links nav ul li {
+        margin: 5px 0;
+        text-align: center;
+    }
+    
+    /* Thay đổi header */
+    .top-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .auth-buttons {
+        width: 100%;
+        justify-content: center;
+    }
+    .btn-block {
+        margin-left: 0;
+    }
+
+    .main-nav-links {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    
+    /* === LAYOUT CHANGES === */
+    /* Chuyển layout từ nhiều cột sang 1 cột */
+    .routes-grid, 
+    .promo-grid,
+    .news-grid,
+    .services-container, 
+    .team-container,
+    .related-news-grid,
+    .vision-mission-container {
+        grid-template-columns: 1fr !important;
+    }
+    
+    /* Chuyển flex layout từ row sang column */
+    .about-content,
+    .featured-news-item,
+    .footer-content,
+    .form-row,
+    .schedule-time,
+    .achievements-container {
+        flex-direction: column !important;
+    }
+    
+    /* === FORM ELEMENTS === */
+    /* Làm form elements chiếm toàn bộ chiều rộng */
+    .search-form form {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-group {
+        width: 100%;
+    }
+
+    .lab-item {
+        width: 100%;
+    }
+    
+    /* === SPACING & SIZING === */
+    /* Giảm padding và margin */
+    .news-detail-container,
+    .auth-container {
+        padding: 15px;
+    }
+    
+    .hero-banner {
+        padding: 40px 0 80px;
+    }
+    
+    /* Giảm kích thước font */
+    .banner-content h1,
+    .news-header h1 {
+        font-size: 1.5em;
+    }
+    
+    .btn-search {
+        margin-left: 130px;
+    }
+    /* === SPECIFIC COMPONENTS === */
+    /* Điều chỉnh các thành phần cụ thể */
+    .ticket-header,
+    .journey-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .ticket-actions {
+        flex-wrap: wrap;
+    }
+    
+    .cancel-btn {
+        width: 100%;
+        margin: 10px 0 0 0;
+    }
+    
+    /* Điều chỉnh tabs */
+    .category-tabs {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding-bottom: 10px;
+    }
+    
+    .category-tabs li a {
+        white-space: nowrap;
+    }
+    
+    /* Điều chỉnh social buttons */
+    .social-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    /* === ANIMATIONS === */
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+/* Styles cho tablet (768px - 991px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    /* Ẩn nút menu toggle trên tablet */
+    .menu-toggle {
+        display: none;
+    }
+    
+    /* Điều chỉnh grid layout cho tablet */
+    .routes-grid, 
+    .promo-grid,
+    .news-grid,
+    .services-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Điều chỉnh các container */
+    .vision-mission-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Điều chỉnh featured news */
+    .featured-news-item {
+        flex-direction: row;
+    }
+    
+    /* Điều chỉnh schedule */
+    .schedule-item {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Styles cho desktop (trên 992px) */
+@media (min-width: 992px) {
+    /* Ẩn nút menu toggle trên desktop */
+    .menu-toggle {
+        display: none;
+    }
+    
+    /* Hiển thị menu ngang */
+    .main-menu nav ul {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    /* Điều chỉnh grid layout cho desktop */
+    .routes-grid, 
+    .promo-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .news-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .services-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    /* Điều chỉnh các container */
+    .vision-mission-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .contact-container {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    /* Điều chỉnh featured news */
+    .featured-news-item {
+        flex-direction: row;
+    }
+    
+    /* Điều chỉnh footer */
+    .footer-content {
+        flex-direction: row;
+    }
+}
+
+/* Hiệu ứng chuyển đổi mượt mà */
+.main-menu nav,
+.main-menu nav ul,
+.routes-grid,
+.promo-grid,
+.news-grid,
+.services-container,
+.team-container,
+.vision-mission-container,
+.contact-container,
+.featured-news-item,
+.footer-content,
+.form-row,
+.schedule-time,
+.achievements-container {
+    transition: all 0.3s ease-in-out;
+}
