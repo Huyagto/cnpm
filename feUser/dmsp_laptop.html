@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sản phẩm - The Zoo Shop</title> <!-- Thay đổi title -->
+    <title>Danh mục sản phẩm - The Zoo Shop</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/danhmucsanpham.css"> <!-- Vẫn có thể dùng chung CSS với category -->
-    <link rel="stylesheet" href="css/sanpham.css"> <!-- File CSS riêng cho trang sản phẩm (nếu cần) -->
+    <link rel="stylesheet" href="css/danhmucsanpham.css"> <!-- Sẽ tạo file này ở bước sau -->
 </head>
 <body>
-    <!-- Header Section (Giữ nguyên từ category.html) -->
+    <!-- Header Section (Copy từ index.html) -->
     <header class="site-header">
         <div class="header-top">
             <div class="container">
@@ -29,7 +28,7 @@
                     </form>
                 </div>
                 <div class="header-top-actions">
-                    <a href="dangnhap.html" class="header-action-btn" id="loginBtnHeader">
+                    <a href="dangnhap.html" class="header-action-btn">
                         <i class="fas fa-sign-in-alt"></i>
                         <span>Đăng nhập</span>
                     </a>
@@ -41,7 +40,7 @@
                             <li><a href="#" id="logoutBtnHeader">Đăng xuất</a></li>
                         </ul>
                     </div>
-                    <a href="giohang.html" class="header-action-btn" id="cartBtnHeader">
+                    <a href="giohang.html" class="header-action-btn">
                         <i class="fas fa-shopping-cart"></i>
                         <span>Giỏ hàng</span>
                     </a>
@@ -58,7 +57,7 @@
                 <div class="container">
                     <ul>
                         <li><a href="index.html"><i class="fas fa-home"></i> Trang chủ</a></li>
-                        <li class="active"><a href="sanpham.html"><i class="fas fa-box-open"></i> Sản phẩm</a></li> <!-- Đổi link và active -->
+                        <li class="active"><a href="sanpham.html"><i class="fas fa-box-open"></i> Sản phẩm</a></li>
                         <li><a href="donhang.html"><i class="fas fa-file-invoice-dollar"></i> Đơn hàng</a></li>
                         <li><a href="gioithieu.html"><i class="fas fa-users"></i> Giới Thiệu</a></li>
                         <li><a href="#"><i class="fas fa-phone-alt"></i> 0868xxxxxx</a></li>
@@ -69,36 +68,25 @@
     </header>
     <!-- End Header Section -->
 
-    <!-- Main Content Area for Products Page -->
-    <main class="products-page"> <!-- Đổi class cho main -->
+    <!-- Main Content Area for Category Page -->
+    <main class="category-page">
         <div class="container">
-            <!-- Breadcrumbs (Có thể bỏ hoặc giữ lại và điều chỉnh) -->
+            <!-- Breadcrumbs (Tùy chọn, nhưng nên có) -->
             <nav aria-label="breadcrumb" class="breadcrumbs">
                 <ol class="breadcrumb-list">
                     <li class="breadcrumb-item"><a href="index.html">Trang chủ</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Tất cả sản phẩm</li>
+                    <li class="breadcrumb-item active" aria-current="page">Chuột Gaming</li>
+                    <!-- Tên danh mục sẽ thay đổi động -->
                 </ol>
             </nav>
 
-            <h1 class="page-main-title">Tất Cả Sản Phẩm</h1> <!-- Tiêu đề chính của trang -->
+            <h1 class="category-title">Chuột Gaming</h1> <!-- Tiêu đề danh mục -->
 
-            <!-- Filters (Nếu có, sẽ thêm vào đây. Ví dụ) -->
-            <aside class="product-filters-sidebar" style="display:none;"> <!-- Tạm thời ẩn -->
-                <h4>Bộ lọc sản phẩm</h4>
-                <div class="filter-group">
-                    <h5>Danh mục</h5>
-                    <ul>
-                        <li><input type="checkbox" id="cat1" name="cat1"><label for="cat1">Chuột Gaming</label></li>
-                        <li><input type="checkbox" id="cat2" name="cat2"><label for="cat2">Bàn phím</label></li>
-                        <li><input type="checkbox" id="cat3" name="cat3"><label for="cat3">Tai nghe</label></li>
-                    </ul>
-                </div>
-                <div class="filter-group">
-                    <h5>Giá</h5>
-                    <!-- Thêm slider giá hoặc input min/max -->
-                </div>
-                <button class="btn btn-apply-filters">Áp dụng lọc</button>
-            </aside>
+            <!-- Filters (Nếu có, sẽ thêm vào đây) -->
+            <!-- <aside class="filters-sidebar"> -->
+            <!-- <h4>Bộ lọc</h4> -->
+            <!-- Các tùy chọn lọc -->
+            <!-- </aside> -->
 
             <section class="product-listing">
                 <div class="products-grid category-products-grid">
@@ -250,8 +238,7 @@
                     </div>
                 </div>
 
-
-                <!-- Pagination (Giữ nguyên từ category.html) -->
+                <!-- Pagination -->
                 <nav aria-label="Page navigation" class="pagination-container">
                     <ul class="pagination">
                         <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1" aria-disabled="true">Trang trước</a></li>
@@ -266,7 +253,7 @@
     </main>
     <!-- End Main Content Area -->
 
-    <!-- Footer Section (Giữ nguyên từ category.html) -->
+    <!-- Footer Section (Copy từ index.html) -->
     <footer class="site-footer">
         <div class="footer-top">
             <div class="container">

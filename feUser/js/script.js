@@ -28,48 +28,35 @@ document.addEventListener('DOMContentLoaded', function() {
      * Khởi tạo menu cho thiết bị di động
      */
     function initMobileMenu() {
-        const menuToggle = document.querySelector('.menu-toggle'); // Giả sử nút toggle đã có trong HTML
-        const mainMenuNav = document.querySelector('.main-menu nav');
-
-        if (menuToggle && mainMenuNav) {
-            menuToggle.addEventListener('click', function() {
-                mainMenuNav.classList.toggle('active');
-                const icon = this.querySelector('i');
-                if (icon) {
-                    icon.classList.toggle('fa-bars');
-                    icon.classList.toggle('fa-times');
-                }
-                if (mainMenuNav.classList.contains('active')) {
-                    mainMenuNav.style.animation = 'slideDown 0.3s ease forwards';
-                } else {
-                    mainMenuNav.style.animation = 'slideUp 0.3s ease forwards';
-                }
-            });
-        } else {
-            // Nếu chưa có nút toggle trong HTML, tạo nó
-            const mainMenuContainer = document.querySelector('.main-menu .container'); // Container của nav
-            const navElement = document.querySelector('.main-menu nav');
-            if (mainMenuContainer && navElement && !document.querySelector('.menu-toggle')) {
-                const newMenuToggle = document.createElement('div');
-                newMenuToggle.className = 'menu-toggle';
-                newMenuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-                mainMenuContainer.insertBefore(newMenuToggle, navElement); // Chèn trước nav
-
-                newMenuToggle.addEventListener('click', function() {
-                    navElement.classList.toggle('active');
-                    const icon = this.querySelector('i');
-                    if (icon) {
-                        icon.classList.toggle('fa-bars');
-                        icon.classList.toggle('fa-times');
-                    }
-                    if (navElement.classList.contains('active')) {
-                        navElement.style.animation = 'slideDown 0.3s ease forwards';
-                    } else {
-                        navElement.style.animation = 'slideUp 0.3s ease forwards';
-                    }
-                });
+        
+        // Nếu chưa có nút toggle trong HTML, tạo nó
+        const menuToggle = document.createElement('div');
+        menuToggle.className = 'menu-toggle';
+        menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+        
+        const mainMenu = document.querySelector('.main-nav-links nav');
+        if (!mainMenu) return;
+        
+        const mainMenuParent = mainMenu.parentElement;
+        mainMenuParent.insertBefore(menuToggle, mainMenu);
+        
+        // Xử lý sự kiện click vào nút toggle
+        menuToggle.addEventListener('click', function() {
+            // Toggle class active cho menu
+            mainMenu.classList.toggle('active');
+            
+            // Chuyển đổi biểu tượng
+            const icon = this.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+            
+            // Thêm hiệu ứng
+            if (mainMenu.classList.contains('active')) {
+                mainMenu.style.animation = 'slideDown 0.3s ease forwards';
+            } else {
+                mainMenu.style.animation = 'slideUp 0.3s ease forwards';
             }
-        }
+        });
     }
 
 

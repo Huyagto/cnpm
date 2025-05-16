@@ -36,6 +36,14 @@
                         <i class="fas fa-sign-in-alt"></i>
                         <span>Đăng nhập</span>
                     </a>
+                    <div class="user-avatar-header" id="userAvatarHeader" style="display: none;">
+                        <img src="img/avatar-placeholder.png" alt="User Avatar" id="headerUserAvatarImg">
+                        <ul class="user-dropdown-menu">
+                            <li><a href="thongtinnguoidung.html">Tài khoản của tôi</a></li>
+                            <li><a href="donhang.html">Đơn hàng</a></li>
+                            <li><a href="#" id="logoutBtnHeader">Đăng xuất</a></li>
+                        </ul>
+                    </div>
                     <a href="giohang.html" class="header-action-btn">
                         <i class="fas fa-shopping-cart"></i>
                         <span>Giỏ hàng</span>
@@ -46,26 +54,22 @@
         </div>
 
         <nav class="main-navigation">
-             <div class="menu-toggle" id="menu-toggle">&#9776;</div>
-            <nav id="mobile-menu">
-    <ul>
-      <li><a href="index.html" class="link-page">Trang chủ</a></li>
-      <li><a href="danhmuc.html" class="link-page">Sản phẩm</a></li>
-      <li> <a href="#" class="go-to-lienhe" class="link-page">Về Chillhood</a></li>
-      <li> <a href="#" class="go-to-gioithieu" class="link-page">Liên Hệ</a></li>
-      <li> <a href="#" class="go-to-lab" class="link-page">Lab Thực Hành</a></li>
-    </ul>
-  </nav>
+            <div class="category-menu-toggle">
+                <span>DANH MỤC SẢN PHẨM</span>
+                <i class="fas fa-angle-down"></i>
+            </div>
             <div class="main-nav-links">
                 <div class="container">
                     <!-- Container cho các link menu chính -->
-                    <ul>
-                        <li class="active"><a href="#"><i class="fas fa-home"></i> Trang chủ</a></li>
-                        <li><a href="/sanpham.html"><i class="fas fa-box-open"></i> Sản phẩm</a></li>
-                        <li><a href="/donhang.html"><i class="fas fa-file-invoice-dollar"></i> Đơn hàng</a></li>
-                        <li><a href="/gioithieu.html"><i class="fas fa-users"></i> Giới Thiệu</a></li>
-                        <li><a href="#"><i class="fas fa-phone-alt"></i> 0868xxxxxx</a></li>
-                    </ul>
+                    <nav>
+                        <ul>
+                            <li class="active"><a href="/index.html"><i class="fas fa-home"></i> Trang chủ</a></li>
+                            <li><a href="/sanpham.html"><i class="fas fa-box-open"></i> Sản phẩm</a></li>
+                            <li><a href="/donhang.html"><i class="fas fa-file-invoice-dollar"></i> Đơn hàng</a></li>
+                            <li><a href="/gioithieu.html"><i class="fas fa-users"></i> Giới Thiệu</a></li>
+                            <li><a href="#"><i class="fas fa-phone-alt"></i> 0868xxxxxx</a></li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
         </nav>
