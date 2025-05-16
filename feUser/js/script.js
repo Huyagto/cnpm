@@ -23,7 +23,18 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('resize', handleResponsive);
 
     // ===== CÁC HÀM KHỞI TẠO =====
+    //hiện danhmuc dang lỗi
+    const toggleBtn = document.querySelector(".category-menu-toggle");
+    const categories = document.querySelector(".categories-content");
 
+    toggleBtn.addEventListener("click", function() {
+        categories.classList.toggle("categories-content");
+        if (categories.classList.contains("categories-content")) {
+            categories.style.display = "block";
+        } else {
+            categories.style.display = "none";
+        }
+    });
     /**
      * Khởi tạo menu cho thiết bị di động
      */
@@ -771,7 +782,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         renderOrders(userOrders);
     }
-    
 
 });
 
@@ -840,3 +850,5 @@ const slider = document.getElementById("slider");
 
   // Khởi tạo ban đầu
   showSlide(currentSlide);
+
+  
