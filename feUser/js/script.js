@@ -536,8 +536,8 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!cartWithItemsDiv || !cartEmptyDiv) return;
 
         let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [
-            // { id: 1, name: "Razer DeathAdder V2 Pro Wireless Gaming Mouse", price: 2990000, quantity: 1, image: "img/product-cart1-placeholder.jpg", sku: "RZ01-03350100" },
-            // { id: 2, name: "Logitech G Pro X Mechanical Gaming Keyboard", price: 3500000, quantity: 1, image: "img/product-cart2-placeholder.jpg", sku: "LG-920-009239" }
+             { id: 1, name: "Razer DeathAdder V2 Pro Wireless Gaming Mouse", price: 2990000, quantity: 1, image: "img/product-cart1-placeholder.jpg", sku: "RZ01-03350100" },
+             { id: 2, name: "Logitech G Pro X Mechanical Gaming Keyboard", price: 3500000, quantity: 1, image: "img/product-cart2-placeholder.jpg", sku: "LG-920-009239" }
         ]; // Lấy từ localStorage, nếu không có thì là mảng rỗng
 
         function renderCart() {
@@ -705,8 +705,8 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!orderListContainer || !noOrdersMessageDiv) return;
 
         const userOrders = JSON.parse(localStorage.getItem('userOrders')) || [ // Lấy đơn hàng từ localStorage (ví dụ)
-            // { id: "ZOO123456", date: "15/07/2023", status: "delivered", total: 6490000, itemsPreview: [{img: "img/product-cart1-placeholder.jpg"}, {img: "img/product-cart2-placeholder.jpg"}], itemCount: 3 },
-            // { id: "ZOO654321", date: "10/07/2023", status: "shipped", total: 3290000, itemsPreview: [{img: "img/mouse1-placeholder.jpg"}], itemCount: 1 }
+             { id: "ZOO123456", date: "15/07/2023", status: "delivered", total: 6490000, itemsPreview: [{img: "img/product-cart1-placeholder.jpg"}, {img: "img/product-cart2-placeholder.jpg"}], itemCount: 3 },
+             { id: "ZOO654321", date: "10/07/2023", status: "shipped", total: 3290000, itemsPreview: [{img: "img/mouse1-placeholder.jpg"}], itemCount: 1 }
         ];
 
         function renderOrders(ordersToRender) {

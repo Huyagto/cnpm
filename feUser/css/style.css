@@ -511,7 +511,7 @@ img {
 }
 
 .categories-content .categories-list {
-  list-style: none;
+  list-style: none; /*đang ẩn cái danhmuc*/
 }
 .categories-content .categories-item {
   position: relative;
